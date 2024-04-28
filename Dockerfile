@@ -21,5 +21,10 @@ ENV N8N_LOG_LEVEL=debug
 
 ENV N8N_ENCRYPTION_KEY=W0rAjnjtd6
 
+WORKDIR /home/nodes/
+RUN npm install n8n-nodes-browserless
+RUN npm install n8n-nodes-yaml
+RUN npm install n8n-nodes-youtube-transcript
+
 
 CMD ["n8n worker"]
