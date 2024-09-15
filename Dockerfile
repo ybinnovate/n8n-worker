@@ -1,21 +1,10 @@
 FROM n8nio/n8n:latest
 
+
 USER root
 
-# Install system dependencies required by PhantomJS using Alpine's package manager (apk)
-RUN apk add --no-cache \
-    fontconfig \
-    freetype \
-    ttf-dejavu \
-    libpng \
-    libjpeg-turbo \
-    libx11 \
-    libxrender \
-    libxext \
-    && rm -rf /var/cache/apk/*
-
 # Install global npm packages
-RUN npm install -g youtube-captions-scraper pdf-parse mammoth csv-parser ffmpeg.js html-pdf
+RUN npm install -g youtube-captions-scraper pdf-parse mammoth csv-parser ffmpeg.js pdf-lib
 
 USER node
 
